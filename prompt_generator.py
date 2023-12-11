@@ -5,7 +5,7 @@ class PromptGenerator:
             f"{static_instruction}\n💾"
             f"{os_section}\n💻"
             f"{ram_section}\n🗜"
-            f"{system_section}\n⌨"
+            f"{system_section}\n📂"
             f"{hdd_section}\n💽"
             f"{user_input_section}\n💬"
         )
