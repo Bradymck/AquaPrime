@@ -11,17 +11,18 @@ import logging
 logging.basicConfig(filename='error_log.log', level=logging.ERROR)
 
 # Replace these placeholders with your actual context processing logic
+import weaviate
+
+client = weaviate.Client("http://localhost:8080")
+
 def process_os_context():
   try:
-    os_context = '''"Role: OS
-        ...
-        fostering strategic choices, creativity, and collaborative experiences.
-        "'''
+    # Query Weaviate for the OS context
+    os_context = client.query.get('OS')
     return os_context
   except Exception as e:
     traceback.print_exc()
     print("Error processing OS context:", str(e))
-
 
 def process_hdd_context():
   try:
