@@ -151,29 +151,29 @@ class OpenAI:
     self.api_key = os.environ['OPENAI_KEY']
     openai.api_key = self.api_key
 
-
-async def on_message(message):
-  # Other code...
-
-  # Ensure sanitized_message is assigned a value before it's used
-  sanitized_message = sanitize_message(message.content) if message.content else ""
-  
-  # Get the last 10 messages in the channel
-  past_messages = await message.channel.history(limit=10).flatten()
-
-  # Extract the content of the messages from the same author
-  past_messages_content = [msg.content for msg in past_messages if msg.author == message.author]
-
-  # Join the past messages into a single string
-  past_messages_str = ' '.join(past_messages_content)
-
-  # Include past user messages in the input to generate_response
-  openai_messages = f"{past_messages_str}\n{sanitized_message}"
-  
-  response = self.generate_response(openai_messages)
-
-  # Other code...
-
+  # Inside the OpenAI class, update the generate_response method as follows
+  def generate_response(self, openai_messages):
+    try:
+      completion = openai.ChatCompletion.create(
+          model="gpt-3.5-turbo",
+          messages=[{
+              "role": "system",
+              "content": "You are a helpful assistant."
+          }, {
+              "role": "user",
+              "content": openai_messages
+          }],
+          max_tokens=250,
+          n=1,
+          stop=[
+              "Human:", "AI:"
+          ]  # Stopping tokens may need to be adjusted based on your dialogue format
+      )
+      return completion.choices[0].message[
+          'content'] if completion else "No response generated."
+    except Exception:
+      traceback.print_exc()
+      return "An error occurred while generating a response."
 
 
 class PineconeClient:
@@ -258,9 +258,7 @@ class PineconeClient:
         match["metadata"]["message"] for match in query_response["matches"]
     ]
 
-    print("Message List retrieved from pinecone: ", message_list)
-
-    sanitized_message = ""  # Initialize sanitized_message with an empty string
+    print("Message List reterieved from pinecone: ", message_list)
 
     completion = openai.ChatCompletion.create(
         model="gpt-4",
@@ -521,7 +519,6 @@ def run_bot():
       print(f'Logged in as {bot.user.name} - {bot.user.id}')
       print(f'This bot is in {len(bot.guilds)} guilds!')
       await load_game_commands()
-
 
 # Move the create_task call inside the on_ready event
 
