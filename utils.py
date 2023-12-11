@@ -2,7 +2,6 @@ import os
 import openai
 import weaviate
 from weaviate import Client
-from utils import WeaviateClient
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import traceback
