@@ -1,0 +1,7 @@
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Environment-specific settings
+.env
+.venv
