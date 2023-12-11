@@ -151,6 +151,40 @@ class OpenAI:
     self.api_key = os.environ['OPENAI_KEY']
     openai.api_key = self.api_key
 
+
+def on_message(message):
+  # Other code...
+
+  # Ensure sanitized_message is assigned a value before it's used
+  sanitized_message = sanitize_message(message.content) if message.content else ""
+
+  user_input_section = f"In response to {message.author.name}: {sanitized_message}"
+
+  # Inside the OpenAI class, update the generate_response method as follows
+  def generate_response(self, openai_messages):
+    try:
+      completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{
+          "role": "system",
+          "content": "You are a helpful assistant."
+        }, {
+          "role": "user",
+          "content": openai_messages
+        }],
+        max_tokens=250,
+        n=1,
+        stop=[
+          "Human:", "AI:"
+        ]  # Stopping tokens may need to be adjusted based on your dialogue format
+      )
+      return completion.choices[0].message[
+        'content'] if completion else "No response generated."
+    except Exception:
+      traceback.print_exc()
+      return "An error occurred while generating a response."
+
+  # Other code...
   # Inside the OpenAI class, update the generate_response method as follows
   def generate_response(self, openai_messages):
     try:
