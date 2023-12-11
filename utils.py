@@ -36,13 +36,14 @@ def process_os_context():
     traceback.print_exc()
     print("Error processing OS context:", str(e))
 
-def process_hdd_context():
-  try:
-    hdd_context = "This is the long term summary..."
-    return hdd_context
-  except Exception as e:
-    traceback.print_exc()
-    print("Error processing HDD context:", str(e))
+def process_hdd_context(query):
+    try:
+        weaviate_client = WeaviateClient()
+        hdd_context = weaviate_client.search_data(query)
+        return hdd_context
+    except Exception as e:
+        traceback.print_exc()
+        print("Error processing HDD context:", str(e))
 
 
 def process_ram_context():
