@@ -1,3 +1,5 @@
+from utils import WeaviateClient
+
 class PromptGenerator:
     def __init__(self):
         self.weaviate_client = WeaviateClient()
