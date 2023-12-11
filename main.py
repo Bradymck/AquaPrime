@@ -152,62 +152,28 @@ class OpenAI:
     openai.api_key = self.api_key
 
 
-def on_message(message):
+async def on_message(message):
   # Other code...
 
   # Ensure sanitized_message is assigned a value before it's used
   sanitized_message = sanitize_message(message.content) if message.content else ""
+  
+  # Get the last 10 messages in the channel
+  past_messages = await message.channel.history(limit=10).flatten()
 
-  user_input_section = f"In response to {message.author.name}: {sanitized_message}"
+  # Extract the content of the messages from the same author
+  past_messages_content = [msg.content for msg in past_messages if msg.author == message.author]
 
-  # Inside the OpenAI class, update the generate_response method as follows
-  def generate_response(self, openai_messages):
-    try:
-      completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[{
-          "role": "system",
-          "content": "You are a helpful assistant."
-        }, {
-          "role": "user",
-          "content": openai_messages
-        }],
-        max_tokens=250,
-        n=1,
-        stop=[
-          "Human:", "AI:"
-        ]  # Stopping tokens may need to be adjusted based on your dialogue format
-      )
-      return completion.choices[0].message[
-        'content'] if completion else "No response generated."
-    except Exception:
-      traceback.print_exc()
-      return "An error occurred while generating a response."
+  # Join the past messages into a single string
+  past_messages_str = ' '.join(past_messages_content)
+
+  # Include past user messages in the input to generate_response
+  openai_messages = f"{past_messages_str}\n{sanitized_message}"
+  
+  response = self.generate_response(openai_messages)
 
   # Other code...
-  # Inside the OpenAI class, update the generate_response method as follows
-  def generate_response(self, openai_messages):
-    try:
-      completion = openai.ChatCompletion.create(
-          model="gpt-3.5-turbo",
-          messages=[{
-              "role": "system",
-              "content": "You are a helpful assistant."
-          }, {
-              "role": "user",
-              "content": openai_messages
-          }],
-          max_tokens=250,
-          n=1,
-          stop=[
-              "Human:", "AI:"
-          ]  # Stopping tokens may need to be adjusted based on your dialogue format
-      )
-      return completion.choices[0].message[
-          'content'] if completion else "No response generated."
-    except Exception:
-      traceback.print_exc()
-      return "An error occurred while generating a response."
+
 
 
 class PineconeClient:
