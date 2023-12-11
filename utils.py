@@ -153,13 +153,17 @@ class OpenAI:
       async def on_ready():
         print(f'Logged in as {bot.user.name}, the harbinger of virtual fate.')
 
-      @bot.event
-      async def on_message(message):
-        try:
-          if message.author == bot.user:
+@bot.event
+async def on_message(message):
+    try:
+        if message.author == bot.user:
             return
-          if bot.user.mentioned_in(message):
+        if bot.user.mentioned_in(message):
             user_id = str(message.author.id)
+            
+            # Ensure sanitized_message is assigned a value before it's used
+            sanitized_message = sanitize_message(message.content) if message.content else ""
+
             # Retrieve memories from MongoDB
             past_messages = messages_collection.find({
                 'channel_id':
