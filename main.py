@@ -258,7 +258,7 @@ class PineconeClient:
         match["metadata"]["message"] for match in query_response["matches"]
     ]
 
-    print("Message List reterieved from pinecone: ", message_list)
+    print("Message List retrieved from pinecone: ", message_list)
 
     completion = openai.ChatCompletion.create(
         model="gpt-4",
