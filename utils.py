@@ -177,7 +177,7 @@ async def on_message(message):
 
             # Forge the celestial prompt
             prompt = f"Role: System\nRole: HDD - {hdd_context}\nRole: RAM - {ram_messages}\nRole: User - {user_id}\n"
-
+            
             # Converse with OpenAI's mystical oracle
             response = openai.generate_response(prompt)
             grumpycat_reply = response.strip()
@@ -189,6 +189,7 @@ async def on_message(message):
         print(f"An error occurred, a tempest in the code: {e}")
 
     await bot.process_commands(message)
+
 
 # Embark on the voyage with the bot
 bot_token = os.getenv("DISCORD_TOKEN")
