@@ -24,4 +24,4 @@ Winning in Aqua Prime is unique. It's about successfully transitioning your virt
 
 ### **Embark on Your Journey**
 
-Aqua Prime is more than just a game. It's an adventure into the heart of a digital world, where strategy, satire, and economic principles intertwine. Are you ready to navigate these waters, master the economic escape room, and emerge victorious in the blockchain realm? Join us in Aqua Prime and shape the future of this unique indie adventure. 🌐🎲
+Aqua Prime is more than just a game. It's an adventure into the heart of a digital world, where strategy, satire, and economic principles intertwine. Are you ready to navigate these waters, master the economic escape room, and emerge victorious in the blockchain realm? Join us in Aqua Prime and shape the future of this unique indie adventure. 🌐🎲💧
