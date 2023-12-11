@@ -260,6 +260,8 @@ class PineconeClient:
 
     print("Message List retrieved from pinecone: ", message_list)
 
+    sanitized_message = ""  # Initialize sanitized_message with an empty string
+
     completion = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[
