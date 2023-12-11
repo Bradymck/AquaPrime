@@ -184,23 +184,24 @@ async def on_message(message):
 
             await message.channel.send(grumpycat_reply)
 
-        except Exception as e:
-          traceback.print_exc()
-          print(f"An error occurred, a tempest in the code: {e}")
-
-        await bot.process_commands(message)
-
-      # Embark on the voyage with the bot
-      bot_token = os.getenv("DISCORD_TOKEN")
-      bot.run(bot_token)
-
     except Exception as e:
-      traceback.print_exc()
-      print(f"A celestial error occurred, a rift in the fabric of code: {e}")
+        traceback.print_exc()
+        print(f"An error occurred, a tempest in the code: {e}")
+
+    await bot.process_commands(message)
+
+# Embark on the voyage with the bot
+bot_token = os.getenv("DISCORD_TOKEN")
+bot.run(bot_token)
+
+except Exception as e:
+    traceback.print_exc()
+    print(f"A celestial error occurred, a rift in the fabric of code: {e}")
 
 
 # Call upon the energies to run the bot
 def run_bot():
+
   try:
     bot = OpenAI()
     bot.generate_response("User message")
