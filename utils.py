@@ -10,28 +10,39 @@ import logging
 
 logging.basicConfig(filename='error_log.log', level=logging.ERROR)
 
-# Replace these placeholders with your actual context processing logic
-import weaviate
-
-client = weaviate.Client("http://localhost:8080")
 
 def process_os_context():
   try:
-    # Query Weaviate for the OS context
-    os_context = client.query.get('OS')
+    os_context = '''"Role: OS
+        ...
+        fostering strategic choices, creativity, and collaborative experiences.
+        "'''
+    return os_context
+  except Exception as e:
+    logging.error("Error processing OS context: %s",
+                  str(e))  # Logging the error
+    traceback.print_exc()
+
+
+# Replace these placeholders with your actual context processing logic
+def process_os_context():
+  try:
+    os_context = '''"Role: OS
+        ...
+        fostering strategic choices, creativity, and collaborative experiences.
+        "'''
     return os_context
   except Exception as e:
     traceback.print_exc()
     print("Error processing OS context:", str(e))
 
-def process_hdd_context(query):
-    try:
-        weaviate_client = WeaviateClient()
-        hdd_context = weaviate_client.search_data(query)
-        return hdd_context
-    except Exception as e:
-        traceback.print_exc()
-        print("Error processing HDD context:", str(e))
+def process_hdd_context():
+  try:
+    hdd_context = "This is the long term summary..."
+    return hdd_context
+  except Exception as e:
+    traceback.print_exc()
+    print("Error processing HDD context:", str(e))
 
 
 def process_ram_context():
@@ -87,28 +98,14 @@ class WeaviateClient:
                     str(e))  # Logging the error
       traceback.print_exc()
 
-def search_data(self, query):
-  try:
-    # Spread the method call over multiple lines to adhere to the line length limit
-    return self.client.query.qet(
-      'Message',
-      with_where_clause=query,
-      with_fields=[
-        "id",
-        "properties.username",
-        "properties.message",
-        "properties.timestamp",
-        "properties.channel_id",
-        'message',
-        'timestamp'
-      ]
-    ).do()
-  except Exception as e:
-    # handle exceptions
-    logging.error("Error searching data in Weaviate: %s",
-                  str(e))  # Logging the error
-    traceback.print_exc()
-
+  def search_data(self, query):
+    try:
+      pass
+      return self.client.query.v1.query(query)
+    except Exception as e:
+      logging.error("Error searching data in Weaviate: %s",
+                    str(e))  # Logging the error
+      traceback.print_exc()
 
 
 class OpenAI:
@@ -154,17 +151,13 @@ class OpenAI:
       async def on_ready():
         print(f'Logged in as {bot.user.name}, the harbinger of virtual fate.')
 
-@bot.event
-async def on_message(message):
-    try:
-        if message.author == bot.user:
+      @bot.event
+      async def on_message(message):
+        try:
+          if message.author == bot.user:
             return
-        if bot.user.mentioned_in(message):
+          if bot.user.mentioned_in(message):
             user_id = str(message.author.id)
-            
-            # Ensure sanitized_message is assigned a value before it's used
-            sanitized_message = sanitize_message(message.content) if message.content else ""
-
             # Retrieve memories from MongoDB
             past_messages = messages_collection.find({
                 'channel_id':
@@ -178,32 +171,30 @@ async def on_message(message):
 
             # Forge the celestial prompt
             prompt = f"Role: System\nRole: HDD - {hdd_context}\nRole: RAM - {ram_messages}\nRole: User - {user_id}\n"
-            
+
             # Converse with OpenAI's mystical oracle
             response = openai.generate_response(prompt)
             grumpycat_reply = response.strip()
 
             await message.channel.send(grumpycat_reply)
 
+        except Exception as e:
+          traceback.print_exc()
+          print(f"An error occurred, a tempest in the code: {e}")
+
+        await bot.process_commands(message)
+
+      # Embark on the voyage with the bot
+      bot_token = os.getenv("DISCORD_TOKEN")
+      bot.run(bot_token)
+
     except Exception as e:
-        traceback.print_exc()
-        print(f"An error occurred, a tempest in the code: {e}")
-
-    await bot.process_commands(message)
-
-
-# Embark on the voyage with the bot
-bot_token = os.getenv("DISCORD_TOKEN")
-bot.run(bot_token)
-
-except Exception as e:
-    traceback.print_exc()
-    print(f"A celestial error occurred, a rift in the fabric of code: {e}")
+      traceback.print_exc()
+      print(f"A celestial error occurred, a rift in the fabric of code: {e}")
 
 
 # Call upon the energies to run the bot
 def run_bot():
-
   try:
     bot = OpenAI()
     bot.generate_response("User message")
