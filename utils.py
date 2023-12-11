@@ -86,29 +86,28 @@ class WeaviateClient:
                     str(e))  # Logging the error
       traceback.print_exc()
 
-  def search_data(self, query):
-    try:
-      pass
-      def search_data(self, query):
-        try:
-            # Spread the method call over multiple lines to adhere to the line length limit
-            return self.client.query.qet(
-                'Message', 
-                with_where_clause=query, 
-                with_fields=[
-                    "id", 
-                    "properties.username", 
-                    "properties.message", 
-                    "properties.timestamp", 
-                    "properties.channel_id", 
-                    'message',
-                    'timestamp'
-                ]).do()
-        except Exception as e:
-            # handle exceptions
-      logging.error("Error searching data in Weaviate: %s",
-                    str(e))  # Logging the error
-      traceback.print_exc()
+def search_data(self, query):
+  try:
+    # Spread the method call over multiple lines to adhere to the line length limit
+    return self.client.query.qet(
+      'Message',
+      with_where_clause=query,
+      with_fields=[
+        "id",
+        "properties.username",
+        "properties.message",
+        "properties.timestamp",
+        "properties.channel_id",
+        'message',
+        'timestamp'
+      ]
+    ).do()
+  except Exception as e:
+    # handle exceptions
+    logging.error("Error searching data in Weaviate: %s",
+                  str(e))  # Logging the error
+    traceback.print_exc()
+
 
 
 class OpenAI:
