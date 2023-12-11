@@ -520,6 +520,7 @@ def run_bot():
       print(f'This bot is in {len(bot.guilds)} guilds!')
       await load_game_commands()
 
+
 # Move the create_task call inside the on_ready event
 
 # Run the bot
