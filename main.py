@@ -51,7 +51,7 @@ bot_discordbotsggco = "https://discord.bots.gg/bots/AquaPrime"
 
 openai_embed_model = "text-embedding-ada-002"
 # Configure logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger("grumpy_cat")
 
 # Create a dictionary of effects for the spell command
