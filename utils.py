@@ -1,27 +1,13 @@
 import os
 import openai
 import weaviate
-from weaviate import Client
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import traceback
 import logging
+from discord.ext import commands
 
 logging.basicConfig(filename='error_log.log', level=logging.ERROR)
-
-
-def process_os_context():
-  try:
-    os_context = '''"Role: OS
-        ...
-        fostering strategic choices, creativity, and collaborative experiences.
-        "'''
-    return os_context
-  except Exception as e:
-    logging.error("Error processing OS context: %s",
-                  str(e))  # Logging the error
-    traceback.print_exc()
-
 
 # Replace these placeholders with your actual context processing logic
 def process_os_context():
@@ -68,7 +54,13 @@ class WeaviateClient:
   def __init__(self):
     try:
       self.client = weaviate.Client(
-          url="https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud")
+          url=os.environ['WEAVIATE_ENDPOINT'],
+          auth_client_secret=weaviate.AuthClientPassword(
+              username=os.environ["WEAV_USER"],
+              password=os.environ["WEAV_PASS"]
+          )
+      )
+
     except Exception as e:
       logging.error("Error initializing Weaviate client: %s",
                     str(e))  # Logging the error
@@ -139,10 +131,6 @@ class OpenAI:
       except Exception as e:
         traceback.print_exc()
         print(e)
-      # Initialize the vessel of Discord
-      intents = discord.Intents.all()
-      intents.messages = True
-      bot = commands.Bot(command_prefix='!', intents=intents)
 
       # Initialize OpenAI's whispered wisdom
       openai = OpenAI()

@@ -221,3 +221,468 @@ ERROR:root:Error initializing Weaviate client: "No login credentials provided. T
                     
 INFO:discord.client:logging in using static token
 INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: edcc870ead5863f42f699655f427feb5).
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 50e7497bbee62ad0c99672f0e1a563bc).
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: fdd71c85ba3d1323e54213c06ffd1335).
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: cb6a24a4bd1565f6cea7bd141a572133).
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 1b5bda885c1e174d95cc21c8ac185f79).
+ERROR:root:Error initializing Weaviate client: Invalid URL 'WEAVIATE_ENDPOINT/v1/.well-known/ready': No scheme supplied. Perhaps you meant https://WEAVIATE_ENDPOINT/v1/.well-known/ready?
+ERROR:root:Error initializing Weaviate client: Invalid URL 'WEAVIATE_ENDPOINT/v1/.well-known/ready': No scheme supplied. Perhaps you meant https://WEAVIATE_ENDPOINT/v1/.well-known/ready?
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 5d168e113a7ef914628e4f7017387539).
+ERROR:root:Error initializing Weaviate client: Invalid URL 'WEAVIATE_ENDPOINT/v1/.well-known/ready': No scheme supplied. Perhaps you meant https://WEAVIATE_ENDPOINT/v1/.well-known/ready?
+ERROR:root:Error initializing Weaviate client: Invalid URL 'WEAVIATE_ENDPOINT/v1/.well-known/ready': No scheme supplied. Perhaps you meant https://WEAVIATE_ENDPOINT/v1/.well-known/ready?
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: e53e1c41e49eef1af54359cc7078e960).
+ERROR:root:Error initializing Weaviate client: Invalid URL 'WEAVIATE_ENDPOINT/v1/.well-known/ready': No scheme supplied. Perhaps you meant https://WEAVIATE_ENDPOINT/v1/.well-known/ready?
+ERROR:root:Error initializing Weaviate client: Invalid URL 'WEAVIATE_ENDPOINT/v1/.well-known/ready': No scheme supplied. Perhaps you meant https://WEAVIATE_ENDPOINT/v1/.well-known/ready?
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: bba67975a1d910b246798eac6349070e).
+ERROR:root:Error initializing Weaviate client: Invalid URL 'WEAVIATE_ENDPOINT/v1/.well-known/ready': No scheme supplied. Perhaps you meant https://WEAVIATE_ENDPOINT/v1/.well-known/ready?
+WARNING:discord.client:PyNaCl is not installed, voice will NOT be supported
+ERROR:root:Error initializing Weaviate client: Invalid URL 'WEAVIATE_ENDPOINT/v1/.well-known/ready': No scheme supplied. Perhaps you meant https://WEAVIATE_ENDPOINT/v1/.well-known/ready?
+DEBUG:discord.client:on_command_error has successfully been registered as an event
+DEBUG:discord.client:on_ready has successfully been registered as an event
+DEBUG:discord.client:on_message has successfully been registered as an event
+DEBUG:discord.client:on_ready has successfully been registered as an event
+DEBUG:asyncio:Using selector: EpollSelector
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: eb3d53292b8e97eefa80a46a86aa760a).
+ERROR:root:Error initializing Weaviate client: Invalid URL 'WEAVIATE_ENDPOINT/v1/.well-known/ready': No scheme supplied. Perhaps you meant https://WEAVIATE_ENDPOINT/v1/.well-known/ready?
+WARNING:discord.client:PyNaCl is not installed, voice will NOT be supported
+ERROR:root:Error initializing Weaviate client: Invalid URL 'WEAVIATE_ENDPOINT/v1/.well-known/ready': No scheme supplied. Perhaps you meant https://WEAVIATE_ENDPOINT/v1/.well-known/ready?
+DEBUG:discord.client:on_command_error has successfully been registered as an event
+DEBUG:discord.client:on_ready has successfully been registered as an event
+DEBUG:discord.client:on_message has successfully been registered as an event
+DEBUG:discord.client:on_ready has successfully been registered as an event
+DEBUG:asyncio:Using selector: EpollSelector
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 6102ea10efc0f3d2a0b9c0465c1134ae).
+ERROR:root:Error initializing Weaviate client: Invalid URL 'WEAVIATE_ENDPOINT/v1/.well-known/ready': No scheme supplied. Perhaps you meant https://WEAVIATE_ENDPOINT/v1/.well-known/ready?
+WARNING:discord.client:PyNaCl is not installed, voice will NOT be supported
+ERROR:root:Error initializing Weaviate client: Invalid URL 'WEAVIATE_ENDPOINT/v1/.well-known/ready': No scheme supplied. Perhaps you meant https://WEAVIATE_ENDPOINT/v1/.well-known/ready?
+DEBUG:discord.client:on_command_error has successfully been registered as an event
+DEBUG:discord.client:on_ready has successfully been registered as an event
+DEBUG:discord.client:on_message has successfully been registered as an event
+DEBUG:discord.client:on_ready has successfully been registered as an event
+DEBUG:asyncio:Using selector: EpollSelector
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: a549ce92557a5770ddba4535b47f14d0).
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 75769346c87f71e28799ea51abc4685a).
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: c0376b5df77872a9ace101024839de1f).
+ERROR:root:Error initializing Weaviate client: module 'weaviate' has no attribute 'AuthClientApiKey'
+ERROR:root:Error initializing Weaviate client: module 'weaviate' has no attribute 'AuthClientApiKey'
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: abe5d870a4abddb3b27c17f96708e732).
+ERROR:root:Error initializing Weaviate client: name 'AuthClientPassword' is not defined
+ERROR:root:Error initializing Weaviate client: name 'AuthClientPassword' is not defined
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: c950cb77e22d1797de196417e3f19bfe).
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: cac8e3a654f334c180ec09c959341e4c).
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: a272ab2a143079a908416b09eb980782).
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 61b06e4e2f4e0c6c1b7f12461747e109).
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: bb5e8f9bc6416038297cf2ef37770836).
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: f910e9e7957b2a4734e2a7490bfa6008).
+ERROR:root:Error initializing Weaviate client: Meta endpoint! Unexpected status code: 401, with response body: {'code': 401, 'message': 'invalid api key, please provide a valid api key'}.
+ERROR:root:Error initializing Weaviate client: Meta endpoint! Unexpected status code: 401, with response body: {'code': 401, 'message': 'invalid api key, please provide a valid api key'}.
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 3369cd5f18df4b9fb2d68181fe54a963).
+ERROR:root:Error initializing Weaviate client: Meta endpoint! Unexpected status code: 401, with response body: {'code': 401, 'message': 'invalid api key, please provide a valid api key'}.
+ERROR:root:Error initializing Weaviate client: Meta endpoint! Unexpected status code: 401, with response body: {'code': 401, 'message': 'invalid api key, please provide a valid api key'}.
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: f88950c5750b43955d5a5865c870c66e).
+ERROR:root:Error initializing Weaviate client: Meta endpoint! Unexpected status code: 401, with response body: {'code': 401, 'message': 'invalid api key, please provide a valid api key'}.
+ERROR:root:Error initializing Weaviate client: Meta endpoint! Unexpected status code: 401, with response body: {'code': 401, 'message': 'invalid api key, please provide a valid api key'}.
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 411fef81de90a2a4e6097a34acbc57e3).
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: c3595cf8d4d33763bfd9ce540a6cde5d).
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+ERROR:root:Error initializing Weaviate client: "No login credentials provided. The weaviate instance at https://ojjvhtl3tgktfgh1qkstaw.c0.us-west1.gcp.weaviate.cloud requires login credentials.
+
+                    Please check our documentation at https://weaviate.io/developers/weaviate/client-libraries/python#authentication
+                    for more information about how to use authentication.
+
+                    You can instantiate the client with login credentials for WCS using
+
+                    client = weaviate.Client(
+                      url=YOUR_WEAVIATE_URL,
+                      auth_client_secret=weaviate.AuthClientPassword(
+                        username = YOUR_WCS_USER,
+                        password = YOUR_WCS_PW,
+                      ))
+                    
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: b981921a87781b2202558cd1d178b2b6).
+ERROR:root:Error initializing Weaviate client: module 'weaviate' has no attribute 'connect_to_wcs'
+ERROR:root:Error initializing Weaviate client: module 'weaviate' has no attribute 'connect_to_wcs'
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 7aa811662a003748d3064815401fba01).
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 8387d96bb53048ea4a65ba76717e3600).
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: 7465a282352781edf7e8ffdd4179885f).
+INFO:discord.gateway:Shard ID None has successfully RESUMED session 7465a282352781edf7e8ffdd4179885f.
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: ecbfa78783e99baae5c95a29a58bca51).
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Shard ID None has connected to Gateway (Session ID: ec5790d7afd6980b9481aec2f853fb2f).

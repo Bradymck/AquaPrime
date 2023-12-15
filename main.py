@@ -29,6 +29,7 @@ openai.api_key = os.environ['OPENAI_KEY']
 client = pymongo.MongoClient(os.environ['MONGO_URI'])
 messages_collection = None
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
+
 bot_name = ""
 bot_description = "Act as 😾. The iconic meme"
 bot_owner = "Grumpy Cat#9218"
