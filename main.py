@@ -192,51 +192,57 @@ class PineconeClient:
     print(f"Index Name: {PINECONE_INDEX_NAME}")
     print(f"Environment: {PINECONE_ENVIRONMENT}")
 
-  def upsert_to_pinecone(self, message_id, message_content, user_id,
-                         timestamp):
-    print("Upserting to Pinecone...")
+    def upsert_to_pinecone(self, message_id, message_content, user_id, timestamp):
+      print("Upserting to Pinecone...")
+      index = pinecone.Index(self.index_name)
+      print("Embedding message content for Pinecone upsert...")
+      MODEL = "text-embedding-ada-002"
 
-    openai.api_key = os.environ["OPENAI_KEY"]
-    index = pinecone.Index(self.index_name)
+      # Create the embeddings for the message content using the correct API call
+      res = openai.Embedding.create(
+          model=MODEL,
+          input=message_content
+      )
 
-    openai.Engine.list()
-    MODEL = "text-embedding-ada-002"
+      embeds = res['data']
+      print("Embedding process completed.")
 
-    res = openai.Embedding.create(
-        input=[message_content],
-        engine=MODEL,
-    )
-    embeds = [record["embedding"] for record in res["data"]]
+      # Check if the index exists and create it if not
+      if self.index_name not in pinecone.list_indexes():
+          pinecone.create_index(self.index_name, dimension=len(embeds[0]['embedding']))
+          index = pinecone.Index(self.index_name)
+          print("Index created: ", self.index_name)
+        
+      def summarize(self, keyword, user_id):
+        print("Fetching from Pinecone...")
+        index = pinecone.Index(self.index_name)
+        openai.api_key = os.environ["OPENAI_KEY"]
+        one_day_ago = int((datetime.utcnow() - timedelta(days=1)).timestamp())
+      # Generate the embedding for the keyword
+      query_embedding = get_embedding(keyword, openai.api_key)
+      query_response = index.query(
+          top_k=10,
+          include_values=False,
+          include_metadata=True,
+          vector=query_embedding,
+          filter={
+              "user_id": {
+                  "$eq": str(user_id)
+              },
+              "timestamp": {
+                  "$gte": one_day_ago
+              },
+          },
+      )
 
-    if self.index_name not in pinecone.list_indexes():
-      pinecone.create_index(self.index_name, dimension=len(embeds[0]))
-
-    upsert_response = index.upsert(
-        vectors=[{
-            "id": str(message_id),
-            "values": res["data"][0]["embedding"],
-            "metadata": {
-                "user_id": str(user_id),
-                "message": message_content,
-                "timestamp": timestamp,
-            },
-        }])
-    print("Data Upsertion Complete...")
-
-    return upsert_response
+      print("Data upsertion complete.")
+      return upsert_response
 
   def summarize(self, keyword, user_id):
     print("Fetching from Pinecone...")
 
     index = pinecone.Index(self.index_name)
     openai.api_key = os.environ["OPENAI_KEY"]
-
-    openai.Engine.list()
-    MODEL = "text-embedding-ada-002"
-    res = openai.Embedding.create(
-        input=[keyword],
-        engine=MODEL,
-    )
 
     one_day_ago = int((datetime.utcnow() - timedelta(days=1)).timestamp())
 
@@ -354,7 +360,7 @@ pinecone_client = PineconeClient(
 async def on_message(message):
   try:
     weaviate_client = WeaviateClient()
-    openai_instance = OpenAI(weaviate_client)
+    OpenAI(weaviate_client)
     if message.author == bot.user:
       return
 
@@ -389,21 +395,21 @@ async def on_message(message):
           await asyncio.sleep(2)  # optional, to enhance the typing effect
           await message.channel.send(reply)
 
-    try:
-      # Retrieve the Weaviate search results
-      weaviate_results = weaviate_client.search_data(str(message.author.id))
-      print("Weaviate search results:", weaviate_results)
-    except Exception as e:
-      print(f"Weaviate search error: {e}")
-      return
+    #try:
+    # Retrieve the Weaviate search results
+    # weaviate_results = weaviate_client.search_data(str(message.author.id))
+    #print("Weaviate search results:", weaviate_results)
+    #except Exception as e:
+    #print(f"Weaviate search error: {e}")
+    # return
 
-    try:
-      # Retrieve the Weaviate search results
-      weaviate_results = weaviate_client.search_data(str(message.author.id))
-      print("Weaviate search results:", weaviate_results)
-    except Exception as e:
-      print(f"Weaviate search error: {e}")
-      return
+    #try:
+    # Retrieve the Weaviate search results
+    #weaviate_results = weaviate_client.search_data(str(message.author.id))
+    #print("Weaviate search results:", weaviate_results)
+    #except Exception as e:
+    # print(f"Weaviate search error: {e}")
+    #return
 
     if bot.user.mentioned_in(message):
       sanitized_message = sanitize_message(message.content)
@@ -445,44 +451,40 @@ async def on_message(message):
     ])
 
     # Generate prompts using PromptGenerator
-    static_instruction = "Your static instruction goes here"
-    os_section = process_os_context()
-    ram_section = process_ram_context(ram_messages, bot.user.id)
-    system_section = "..."  # Update with the relevant system information
+    process_os_context()
+    process_ram_context(ram_messages, bot.user.id)
 
     # Pass the Weaviate search results to the process_hdd_context function
-    hdd_section = process_hdd_context(weaviate_results)
-
-    user_input_section = f"In response to {message.author.name}: {sanitized_message}"
+    #hdd_section = process_hdd_context(weaviate_results)
 
     # Construct the openai_messages variable
-    openai_messages = prompt_generator.generate_prompt(static_instruction,
-                                                       os_section, ram_section,
-                                                       system_section,
-                                                       hdd_section,
-                                                       user_input_section)
+#    openai_messages = prompt_generator.generate_prompt(static_instruction,
+#                                                      os_section, ram_section,
+#                                                     system_section,
+#                                                    hdd_section,
+#                                                   user_input_section)
 
-    response = openai_instance.generate_response(openai_messages)
+#response = openai_instance.generate_response(openai_messages)
 
-    console_prompt = prompt_generator.generate_prompt(static_instruction,
-                                                      os_section, ram_messages,
-                                                      system_section,
-                                                      hdd_section,
-                                                      user_input_section)
-    print("\n🤖 Prompt to OpenAI:")
-    print(console_prompt)
+#console_prompt = prompt_generator.generate_prompt(static_instruction,
+#                                                 os_section, ram_messages,
+#                                                system_section,
+#                                               hdd_section,
+#                                             user_input_section)
+#print("\n🤖 Prompt to OpenAI:")
+#print(console_prompt)
 
-    response = openai_instance.generate_response(openai_messages)
-    response_sections = response.split("HDD:")
-    assistant_reply = response_sections[0]
+#response = openai_instance.generate_response(openai_messages)
+#response_sections = response.split("HDD:")
+#assistant_reply = response_sections[0]
 
-    if assistant_reply.strip():
-      async with message.channel.typing():
-        await asyncio.sleep(2)
-        if len(assistant_reply) > 2000:
-          assistant_reply = assistant_reply[:
-                                            2000]  # Truncate the response to fit the Discord limit
-        await message.channel.send(assistant_reply.strip())
+#if assistant_reply.strip():
+# async with message.channel.typing():
+#  await asyncio.sleep(2)
+# if len(assistant_reply) > 2000:
+#  assistant_reply = assistant_reply[:
+#                                   2000]  # Truncate the response to fit the Discord limit
+#await message.channel.send(assistant_reply.strip())
 
   except Exception:
     traceback.print_exc()
@@ -521,6 +523,7 @@ def run_bot():
       print(f'This bot is in {len(bot.guilds)} guilds!')
       await load_game_commands()
 
+
 # Move the create_task call inside the on_ready event
 
 # Run the bot
@@ -529,5 +532,10 @@ def run_bot():
 
   except Exception:
     traceback.print_exc()
-
+  # Take a snapshot and display the top 10 memory blocks allocated
+  snapshot = tracemalloc.take_snapshot()
+  top_stats = snapshot.statistics('lineno')
+  print("[ Top 10 ]")
+  for stat in top_stats[:10]:
+    print(stat)
 run_bot()

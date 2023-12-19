@@ -6,7 +6,6 @@ from pymongo.server_api import ServerApi
 import traceback
 import logging
 from discord.ext import commands
-
 logging.basicConfig(filename='error_log.log', level=logging.ERROR)
 
 # Replace these placeholders with your actual context processing logic
