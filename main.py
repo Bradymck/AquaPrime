@@ -12,10 +12,14 @@ import openai
 import pinecone
 import pymongo
 import weaviate
+
 from discord.ext import commands
 from dotenv import load_dotenv
 
 from prompt_generator import PromptGenerator
+import openai
+from openai.embeddings_utils import get_embedding
+
 
 tracemalloc.start()
 load_dotenv()
