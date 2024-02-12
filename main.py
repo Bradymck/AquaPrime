@@ -27,7 +27,7 @@ load_dotenv()
 print(discord.__version__)
 print(openai.__version__)
 
-# Global Variables
+# Global Variables🌐
 # Load the OpenAI API key
 openai.api_key = os.environ['OPENAI_KEY']
 client = pymongo.MongoClient(os.environ['MONGO_URI'])

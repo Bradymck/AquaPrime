@@ -1,6 +1,6 @@
 # **Aqua Prime: Mastering the Economic Escape Room in the Satirical Metaverse**
 
-Welcome to Aqua Prime, where economic strategy meets digital satire in an indie gaming experience unlike any other. As you delve into the world of Aqua Prime, you'll find yourself at the intersection of a Minimum Viable Metaverse, blending elements from Tabletop Role-Playing Games (TTRPGs), Massively Multiplayer Online (MMO) games, Non-Fungible Tokens (NFTs), Artificial Intelligence (AI), and Decentralized Autonomous Organizations (DAOs). The heart of this journey is the economic escape room, a unique challenge that blends virtual and real-world economics. 💸
+Welcome to Aqua Prime, where economic strategy meets digital satire in an indie gaming experience unlike any other. As you delve into the world of Aqua Prime, you'll find yourself at the intersection of a Minimum Viable Metaverse, blending elements from Tabletop Role-Playing Games (TTRPGs), Massively Multiplayer Online (MMO) games, Non-Fungible Tokens (NFTs), Artificial Intelligence (AI), and Decentralized Autonomous Organizations (DAOs). The heart of this journey is the economic escape room, a unique challenge that blends virtual and real-world economics. 
 
 ### **The Economic Escape Room: Your Strategic Path**
 
