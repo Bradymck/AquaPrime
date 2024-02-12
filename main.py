@@ -6,7 +6,7 @@ import traceback
 import tracemalloc
 import warnings
 from datetime import datetime, timedelta
-from pinecone import Pinecone, ServerlessSpec
+
 import discord
 import openai
 import pinecone
@@ -186,13 +186,10 @@ class PineconeClient:
   # When "quest" is read the bot should upsert message data to pinecone database
   # When "#Quest" prompt is received, bot should respond with data regarding "quest" it has in pinecone database
 
-  def __init__(self, PINECONE_API_KEY, PINECONE_INDEX_NAME, PINECONE_ENVIRONMENT):
-    
+  def __init__(self, PINECONE_API_KEY, PINECONE_INDEX_NAME,
+               PINECONE_ENVIRONMENT):
     print("Initializing PineconeClient...")
-    self.pc = Pinecone(
-    api_key=PINECONE_API_KEY
-)
-    
+
     pinecone.init(api_key=PINECONE_API_KEY, environment=PINECONE_ENVIRONMENT)
     self.index_name = PINECONE_INDEX_NAME
 
