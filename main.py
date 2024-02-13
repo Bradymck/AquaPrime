@@ -19,7 +19,7 @@ from pinecone import Pinecone, ServerlessSpec
 from prompt_generator import PromptGenerator
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
-#from openai.embeddings_utils import get_embedding
+#from openai.embeddings_utils import get_embedding 🐵
 pc = Pinecone(
     api_key=os.environ.get("PINECONE_API_KEY")
 )
