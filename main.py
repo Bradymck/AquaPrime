@@ -6,20 +6,23 @@ import traceback
 import tracemalloc
 import warnings
 from datetime import datetime, timedelta
-from pinecone import Pinecone, ServerlessSpec
+
 import discord
 import openai
 import pinecone
 import pymongo
 import weaviate
-
 from discord.ext import commands
 from dotenv import load_dotenv
+from pinecone import Pinecone, ServerlessSpec
 
 from prompt_generator import PromptGenerator
-import openai
-from openai.embeddings_utils import get_embedding
 
+openai.api_key = os.getenv("OPENAI_API_KEY")
+#from openai.embeddings_utils import get_embedding
+pc = Pinecone(
+    api_key=os.environ.get("PINECONE_API_KEY")
+)
 
 tracemalloc.start()
 load_dotenv()
@@ -34,30 +37,13 @@ client = pymongo.MongoClient(os.environ['MONGO_URI'])
 messages_collection = None
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
-bot_name = ""
-bot_description = "Act as 😾. The iconic meme"
-bot_owner = "Grumpy Cat#9218"
-bot_color = 0x00ff00
-bot_footer = ""
-bot_footer_icon = "https://i.imgur.com/g6FSNhL.png"
-bot_thumbnail = "https://cdn.discordapp.com/attachments/1147333483610525787/1147333505341210624/Grumpy_Cat_smoking.jpg"
-bot_image = "https://cdn.discordapp.com/attachments/1147333483610525787/1147333505341210624/Grumpy_Cat_smoking.jpg"
-bot_invite = "https://discord.com/<invite>"
-bot_support = "https://discord.gg/trXkq4qj76"
-bot_github = "https://github.com/AquaPrime/GrumpyCat"
-bot_website = "https://AquaPrime.io/"
-bot_donate = "https://www.streamtide.io/AquaPrime"
-bot_patreon = "https://www.patreon.com/AquaPrime"
-bot_topgg = "https://top.gg/bot/AquaPrime"
-bot_discordbotlist = "https://discordbotlist.com/bots/AquaPrime"
-bot_discordbotsgg = "https://discord.bots.gg/bots/AquaPrime"
-bot_discordextremelist = "https://discordextremelist.xyz/en-US/bots/AquaPrime"
-bot_discordbotsggco = "https://discord.bots.gg/bots/AquaPrime"
+bot_name = "ARI"
+bot_description = "Act as ..."
 
 openai_embed_model = "text-embedding-ada-002"
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger("grumpy_cat")
+logger = logging.getLogger("ARI")
 
 # Create a dictionary of effects for the spell command
 last_execution = {}
@@ -159,7 +145,7 @@ class OpenAI:
   # Inside the OpenAI class, update the generate_response method as follows
   def generate_response(self, openai_messages):
     try:
-      completion = openai.ChatCompletion.create(
+      completion = openai.Completion.create(
           model="gpt-3.5-turbo",
           messages=[{
               "role": "system",
@@ -174,6 +160,8 @@ class OpenAI:
               "Human:", "AI:"
           ]  # Stopping tokens may need to be adjusted based on your dialogue format
       )
+
+
       return completion.choices[0].message[
           'content'] if completion else "No response generated."
     except Exception:
@@ -215,6 +203,16 @@ class PineconeClient:
       print("Embedding process completed.")
 
       # Check if the index exists and create it if not
+      if 'my_index' not in pc.list_indexes().names():
+        pc.create_index(
+            name='my_index', 
+            dimension=1536, 
+            metric='euclidean',
+            spec=ServerlessSpec(
+                cloud='aws',
+                region='us-west-2'
+            )
+        )
       if self.index_name not in pinecone.list_indexes():
           pinecone.create_index(self.index_name, dimension=len(embeds[0]['embedding']))
           index = pinecone.Index(self.index_name)
@@ -354,12 +352,7 @@ async def on_ready():
   print(f'This bot is in {len(bot.guilds)} guilds!')
 
 
-#pineconeClient
-pinecone_client = PineconeClient(
-    os.environ["PINECONE_API_KEY"],
-    os.environ["PINECONE_INDEX_NAME"],
-    os.environ["PINECONE_ENVIRONMENT"],
-)
+
 
 
 # Bot Message Event
